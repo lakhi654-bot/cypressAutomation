@@ -41,7 +41,7 @@ module.exports = defineConfig({
       //   await afterRunHook();
       // });
     },
-    specPattern: 'cypress/integration/examples/*.js',
+    specPattern: 'cypress/integration/*/*.js',
     video: true
 
   },

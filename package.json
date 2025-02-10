@@ -7,7 +7,7 @@
     "test": "npx cypress run",
     "headedTest":"npx cypress run --headed",
     "chromeBrowser":"npx cypres run --headed --browser chrome",
-    "greenKartSpecs":"npx cypress run --spec \"cypressAutomation/cypress/integration/greenKart/*.js\" ",
+    "greenKartSpecs":"npx cypress run --spec \"cypress/integration/greenKart/*.js\"",
     "recordDashboards":"npx cypress run --record --key 5ca96296-1eef-4f54-b882-c24714fb93c7 --spec \"cypress/integration/examples/*.js\" --headed --browser chrome"
   },
   "author": "",
