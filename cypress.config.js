@@ -3,6 +3,7 @@ const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/li
 module.exports = defineConfig({
   defaultCommandTimeout:6000,
   reporter: 'cypress-mochawesome-reporter',
+  projectId:'28zfp3',
   env:{
    url:'https://rahulshettyacademy.com/loginpagePractise/#/'
   },
