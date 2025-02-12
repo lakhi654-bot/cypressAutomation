@@ -5,16 +5,28 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress run",
-    "headedTest":"npx cypress run --headed",
-    "chromeBrowser":"npx cypres run --headed --browser chrome",
-    "greenKartSpecs":"npx cypress run --spec \"cypress/integration/greenKart/*.js\"",
-    "recordDashboards":"npx cypress run --record --key 5ca96296-1eef-4f54-b882-c24714fb93c7 --spec \"cypress/integration/examples/*.js\" --headed --browser chrome"
+    "headedTest": "npx cypress run --headed",
+    "chromeBrowser": "npx cypres run --headed --browser chrome",
+    "greenKartSpecs": "npx cypress run --spec \"cypress/integration/greenKart/*.js\"",
+    "recordDashboards": "npx cypress run --record --key 5ca96296-1eef-4f54-b882-c24714fb93c7 --spec \"cypress/integration/examples/*.js\" --headed --browser chrome",
+    "cucumberDashboards":"npx cypress run --record --key 5ca96296-1eef-4f54-b882-c24714fb93c7 --headed --browser chrome",
+    "cucumber":"npx cypress run --env TAGS=\"@smoke\" --headed --browser chrome"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.16.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2"
+  },
+  "cypress-cucumber-preprocessor": {
+  "nonGlobalStepDefinitions": true,
+  "filterSpecs": true,
+  "omitFiltered": true,
+  "step_definitions":"cypress/integration/examples/BDD/ecommerce/ecommerceStepDefinitions.js"
+},
+"dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1"
   }
 }

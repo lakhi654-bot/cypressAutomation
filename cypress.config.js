@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const cucumber = require('cypress-cucumber-preprocessor').default
 // const browserify = require("@cypress/browserify-preprocessor");
 // const {
 //   addCucumberPreprocessorPlugin,
@@ -25,12 +26,14 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   projectId:'28zfp3',
   env:{
-   url:'https://rahulshettyacademy.com/loginpagePractise/#/'
+   url:'https://rahulshettyacademy.com/loginpagePractise/#/',
+  tags: "@smoke"
   },
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
-      require('cypress-mochawesome-reporter/plugin')(on);
+      // require('cypress-mochawesome-reporter/plugin')(on);
+      on('file:preprocessor', cucumber())
       // on('before:run', async (details) => {
       //   console.log('override before:run');
       //   await beforeRunHook(details);
@@ -41,7 +44,8 @@ module.exports = defineConfig({
       //   await afterRunHook();
       // });
     },
-    specPattern: 'cypress/integration/*/*.js',
+    // specPattern: 'cypress/integration/*/*.js',
+    specPattern: '**/*.feature',
     video: true
 
   },
